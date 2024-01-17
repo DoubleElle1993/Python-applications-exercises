@@ -4,7 +4,7 @@ import time
 
 df = pd.DataFrame(np.random.randint(0, 30, size=(5000, 4)), columns=('a','b','c','d'))
 
-def loop(df):
+def loop():
     """
     Create new column to find the ratio between column D and C loops
     """
@@ -17,7 +17,7 @@ def loop(df):
 
 
 
-def vectorization(df):
+def vectorization():
     """
     Create new column to find the ratio between column D and C using vectorization
     """
