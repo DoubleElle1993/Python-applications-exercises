@@ -34,3 +34,13 @@ print(df.loc['Mon':'Fri':2, :])
 print(df.iloc[0:5:2, :])
 
 #Conditions and callable
+print(df.loc[df['Temperature'] > 8.00, 'Weather':'Wind'])
+print(df.loc[(df['Temperature'] > 8.00) & (df['Wind'] > 11), :])
+print(df.iloc[list(df['Temperature'] > 8.00), 'Weather':'Wind'])
+#Iloc doesn't accept boolean Series. I can use list to convert a Series into a boolean list
+print(df.iloc[list((df['Temperature'] > 8.00) & (df['Wind'] > 11)), :])
+
+print(df.loc[:, lambda df: ['Temperature', 'Wind']])
+print(df.loc[lambda df: df['Temperature'] > 8.00, 'Weather':'Wind'])
+print(df.iloc[:, lambda df: [1, 2]])
+print(df.iloc[lambda df: list(df['Temperature'] > 8.00), 0:3])
