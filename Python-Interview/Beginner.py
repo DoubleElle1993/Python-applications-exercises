@@ -164,11 +164,4 @@ List_2 = sorted(List)
 
 By default,both methods are sorted in ascending order. To sort in descending order, you can pass the reverse=True argument.
 
-
-
-
-What is the difference between ‘os.path.join()’ and ‘os.path.abspath’?
-
-os.path.join() is a function in the os.path module that is used to join one or more path components into a single path. It intelligently handles path separators based on the operating system. For example, os.path.join('folder', 'file.txt') returns 'folder/file.txt' on Unix-based systems and 'folder\\\\\\\\file.txt' on Windows.
-os.path.abspath is a function in the os.path module that returns the absolute path of a given file or directory. It provides the full, canonical path, which includes the complete directory path from the root directory.
 '''
