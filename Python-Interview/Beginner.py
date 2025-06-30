@@ -14,6 +14,25 @@ Performance: Tuples are generally faster and require less memory than lists.
 Use Cases: Lists are suitable for collections of items that may change, while tuples are used for collections
 that should remain constant.
 
+def compare_structures():
+    list = [1,2,3]
+    tuple = (4,5,6)
+
+    list.append(16)
+    print('Lista:', list)
+
+    try:
+        tuple.append(18)
+        print('Tupla:', tuple)
+    except AttributeError as e:
+        print('Errore su tupla:', e)
+
+def create_sequence(n):
+
+    sequence = list(range(1, n+1))
+    return sequence, tuple(sequence)
+
+
 3) How do you create a virtual env?
 
 Using the module VENV is possible to create a virtual env
@@ -54,8 +73,21 @@ Bool Boolean Values (True or False)
 
 8) How do you open and close a file in python?
 
-file = open('file_name.txt', 'r') #reading
-file.close
+file = open('file_name.txt', 'r')
+contenuto = file.read()
+print(contenuto)
+file.close()
+
+with open('file_name.txt', 'r') as file:   #Context manager chiude automaticamente il file non c'è bisogno di utilizzare close 
+    testo = file.read()
+
+parole = test.split()
+print('Numero di parole:', len(parole))
+
+
+with open('primo.txt', 'r') as file_1, open ('secondo.txt', 'w') as file_2:
+    file_2.write(file_1.read())
+    
 
 9) What is a python decorator, and how is it used?
 
